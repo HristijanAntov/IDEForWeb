@@ -10,7 +10,7 @@
     "db": {
         "host": "ds117859.mlab.com",
         "port": 17859,
-        "username": "hristijan",
+        "username": "korisnicko ime",
         "password": "tvojot pasvord",
         "dbname": "ide-for-web"
     }
