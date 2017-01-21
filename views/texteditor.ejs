@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/build/texteditor.min.css">
+    <style id='config-styles'></style>
+</head>
+
+<body>
+    <div class="file-explorer resizable-left">
+        <div class="wrapper-treeview">
+            <span style="color:white;">Waiting for file structure...</span>
+        </div>
+    </div>
+    <div class="editors resizable-right">
+        <div class="tabs"></div>
+        <div class="editor-controller">
+        </div>
+    </div>
+    <div class="cursors">
+    </div>
+    <div class="autocomplete-container">
+        <ul class="autocomplete"></ul>
+        <input type="hidden" value="">
+    </div>
+    <div class="contextmenuAction">
+        <ul class="actions"></ul>
+        <input type="hidden">
+    </div>
+    <div class="find-replaces"></div>
+    <div id='quick-open' class="quick-open">
+        <div class="quick-search-box-wrapper">
+            <input id="quick-search-box" class="quick-search-box" type="text" placeholder="   Find files by name or by similar path">
+        </div>
+        <div class="quick-results">
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <div class="options-right">
+        <ul>
+            <li>
+                <a href="/" title="Return to your homepage">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/run/<%=project.name%>" target="blank" title="Run">
+                    <i class="fa fa-play-circle"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Select Themes" onclick="ThemeSelect.toggle()">
+                    <i class="fa fa-th" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Select Themes" onclick="Repl._open()">
+                    <i class="fa fa-terminal" aria-hidden="true"></i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="footer-menu resizable-right">
+        <div class="footer-left"></div>
+        <div class="footer-center">
+            <span id="orientation"></span>
+            <span id="syntax"></span>
+        </div>
+    </div>
+
+    <div class="console resizable-right">
+        <h1 class="terminal-title">Terminal</h1>
+    </div>
+
+    <div class="themes-select">
+        <ul class="theme">
+            <li id="default" class="selected-theme">Default</li>
+            <li id="erlang-dark">Erlang Dark</li>
+            <li id="blackboard">Blackboard</li>
+        </ul>
+    </div>
+    <div id="resize-axis" class="resize-axis"></div>
+    <script src="/assets/js/build/libraries.min.js"></script>
+    <script src="/assets/js/build/texteditor.min.js"></script>
+    <script>
+        ThemeSelect.applyTheme(localStorage.getItem('choosen-theme') || 'default');
+    </script>
+</body>
+
+</html>

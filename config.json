@@ -1,0 +1,17 @@
+{
+    "passport": {
+        "secret": "o12ekomdimic-12kwemdjcijd1o2e0dkwdw",
+        "resave": false,
+        "saveUninitialized": false
+    },
+    "app": {
+        "public": "public"
+    },
+    "db": {
+        "host": "ds117859.mlab.com",
+        "port": 17859,
+        "username": "hristijan",
+        "password": "enci-menci",
+        "dbname": "ide-for-web"
+    }
+}

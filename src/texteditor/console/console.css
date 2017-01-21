@@ -1,0 +1,66 @@
+.console {
+    background-color: black;
+    width:calc(100% - (252px + 51px));
+    height:575px;
+    position: absolute;
+    bottom:33px;
+    left:252px; 
+    font-size: 12px;
+    color: white;
+    overflow:auto;
+    padding-top:10px;
+    padding-bottom:10px; 
+    display: none;
+}
+.isConsoleActive { 
+    display: block;
+}
+.terminal-title {
+    font-size: 15px;
+    color: dimgray;
+    padding-top:5px;
+    padding-left:5px;
+    margin-bottom: 10px; 
+}
+.console-input-row {
+    box-sizing: border-box;
+    height: 20px;
+    width:100%;
+    display: flex;
+}
+.console-path { 
+    height: 100%;
+    color: deepskyblue; 
+    padding-left: 5px; 
+}
+.console-input{ 
+    background-color: inherit; 
+    outline: none;
+    border: none;
+    color: white;
+    padding-left: 5px;
+    height: 100%;
+    width: 100%;
+}
+.console-path , .console-input {
+    font-size: 13px;
+    line-height: 20px;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; 
+
+}
+
+.console-output {
+    background-color: black;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+}
+
+.stdout-error {
+    color: red;
+}
+
+
+
+
+
+  

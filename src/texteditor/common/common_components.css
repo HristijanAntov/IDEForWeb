@@ -1,0 +1,127 @@
+	 .wrapper-treeview{
+ 
+        height: 100%;
+        width:100%;  
+        opacity: 0.9;
+        overflow-y:auto;
+        overflow-x:auto;
+    }
+	
+	.nav-bar-left{
+		list-style-type: none;
+		display: block;
+		height: 100%;
+		float:left;
+		width:295px;;
+	}
+	.nav-bar-left li{
+		 background-color:black;
+		 float: left;
+		 width:33.33333333%;
+		 height:100%;
+		 color:white;
+		 text-align: center; 
+	}
+	.nav-bar-left li a{
+		text-decoration: none;
+		height:100%;
+		width:100%;
+		line-height: 30px;
+		color:white;
+		font-weight: 700;
+		display: block;
+	}
+	.nav-bar-left li select{
+		background-color: black;
+	 	border:none;
+		outline: none;
+		width:100%;
+		height:100%;
+		padding-left: 20px;
+		font-weight: bold; 
+		color:white;
+	}
+	
+	 
+	 
+ 
+	 
+	.run{
+		background-color:#00ACE0 !important;
+        line-height: 30px; 
+	}
+	.deploy{
+		background-color: darkslategray!important;
+		line-height: 30px;
+	}
+	.nav-bar-username{
+		
+	}
+		 
+		 
+		 
+		 
+	.nav-bar-right{
+	 list-style-type: none;
+	 display: none;
+	}
+    .nav-bar-right li a{
+		text-decoration: none;
+		color:white;
+		font-weight: 700; 
+	}
+	
+	
+	
+	.contextmenuAction{
+		border:1px solid black;
+		background: white;
+		width:250px; 
+		position: absolute;
+		left:0px;
+		top:11550px;
+	}
+	.contextmenuAction .actions{
+		list-style-type: none;
+		display: block;
+		padding: 0px;
+		margin:0px;
+		
+	}
+	.contextmenuAction .actions li{ 
+		border-bottom: 1px dotted #f1f1f1;
+		padding-left: 15px;
+		line-height: 30px; 
+		font-family: monospace;
+		font-size: 15px;
+		font-weight: 500;
+	}
+	.contextmenuAction .actions li:hover{
+		background-color: mediumspringgreen;
+		color:white;
+		cursor: pointer;
+	}
+	
+	.contextmenuAction .actions li h5{
+		width:100%;
+		margin-left:-15px;
+		padding-left: 15px;
+		font-family: monospace;
+		font-size: 15px;
+		font-weight: 500;
+	}
+	.rename{
+		font-weight: 700 !important;
+	}
+	#rnmNew{
+		background-color: black;
+		height:31px;
+		width:calc(100% + 15px);
+		border:none;
+		outline: none;
+		margin-left: -15px;
+		font-family: monospace;
+		padding-left: 10px;
+		color:white; 
+		
+	}

@@ -1,0 +1,64 @@
+.quick-open {
+    box-shadow: -5px 5px 10px 0px black;
+    background-color: #0c282f;
+    width:50%;
+    position: absolute;
+    top:10px;
+    left:20%;
+    transition: all 0.5s ease-out;
+    padding-bottom: 10px;
+}
+.quick-open-disappear-smoothly {
+    top:-100%;
+}
+
+.quick-search-box-wrapper { height: 35px; }
+
+
+
+.quick-search-box {
+    background-color: darkslategray;
+    outline: none;
+    border: none;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    padding-left:5px;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
+    color: white;
+    font-size: 13px;
+    margin:5px;
+}
+
+.quick-results { 
+    max-height:300px;
+    overflow: auto;
+}
+
+.result {
+    display: block;
+    padding-left:10px;
+    cursor: pointer;
+    color: white;
+    height:25px;
+    line-height: 25px;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
+    font-size: 13px;
+}
+.active-result {
+    background-color: #040f12;
+}
+
+.found-result-path {
+     
+    margin-left:10px;
+    color:#00e2ff;
+} 
+.path-breadcrumb {  
+    color:white;
+}
+
+
+.quick-result-match-token {
+    color:blueviolet;
+    font-weight: bold;
+}

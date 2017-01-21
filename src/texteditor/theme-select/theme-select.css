@@ -1,0 +1,48 @@
+.themes-select { 
+    box-sizing: border-box;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    border:1px solid cadetblue; 
+    overflow:hidden; 
+    position: absolute;
+    top:125px;
+    right:50px;
+    transition: width , height .2s ease-out;
+    width: 0px;
+    height: 0px;
+}
+.themes-select-active { 
+    width: 150px;
+    height: 100px;
+}
+.themes-select ul {
+
+    list-style-type: none;
+}
+
+.themes-select ul li {
+    font-family: Arial, Helvetica, sans-serif;
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   text-align: center;
+   color: lightblue;
+   cursor: pointer;
+   height: 25%;
+   line-height:1.5;
+   transition: background-color .5s ease-out;
+}
+
+.themes-select ul li:first-child {
+    border-top-left-radius: 3px;
+}
+.themes-select ul li:last-child {
+    border-bottom-left-radius: 3px;
+}
+.themes-select ul li:hover ,.themes-select ul li.selected-theme { 
+     
+  background-color: #163e50;
+ 
+}
+ 

@@ -1,0 +1,65 @@
+ 
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 6px #474747;
+  
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {  
+    background: #708090;  
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: transparent;
+}
+
+.autocomplete-container{   
+    border:1px solid  #708090;
+    background-color: #001218;
+	min-width: 200px; 
+	position: absolute;
+	left: 0px;
+	top: 0px; 
+	display: none;
+    overflow: auto;
+    min-height:25px;
+    max-height: 200px;
+    padding: 10px;
+     
+}
+ 
+.autocomplete{
+    
+	list-style-type: none;
+	margin:  0px;
+	padding: 0px;
+	width: 100%; 
+}
+.autocomplete-container .autocomplete li{
+	background-color: transparent;
+	color:white;
+	height: 25px; 
+	padding-left: 15px; 
+    line-height: 25px;
+	cursor: pointer;
+	font-family: sans-serif; 
+	font-size: 15px;
+    
+}
+
+.autocomplete-container .autocomplete li:hover{ 
+	background-color: #001218 !important;
+	
+}
+.auto-active{ 
+	background-color: #0C3B58!important;
+    color:white;
+}
+
+
+ 

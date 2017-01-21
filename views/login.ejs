@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/assets/css/build/libraries.min.css">
+    <style>
+        body {
+            background: rgb(37, 46, 51);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px;">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Log in</div>
+                    <div class="panel-body">
+                        <form action="/login" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Username</label>
+                                <input class="form-control" id="exampleInputEmail1" type="text" name="username" placeholder="Enter Username"><br/>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <input type="submit" class="btn btn-success" value="Log In">
+                            <a href="/" class="btn btn-warning">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

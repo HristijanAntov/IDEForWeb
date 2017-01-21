@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/assets/css/build/libraries.min.css">
+    <style>
+            body {
+                background: rgb(37, 46, 51);
+            }
+ 
+        </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="row" style="margin-top:50px;">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Sign up</div>
+        <div class="panel-body">
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input class="form-control" id="exampleInputEmail1" type="text" name="username" placeholder="Enter Username"><br/>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Lives in : (city,town)</label>
+                    <input type="text" class="form-control" name="livesIn" id="exampleInputPassword1" placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Occupation</label>
+                    <input type="text" class="form-control" name="occupation" id="exampleInputPassword1" placeholder="Occupation">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">About me</label>
+                    <textarea class="form-control" name="aboutMe" id="exampleInputPassword1" placeholder="About me"></textarea>
+                </div>
+                <input type="submit" class="btn btn-success" value="submit">
+                <a class="btn btn-warning" href="/">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>

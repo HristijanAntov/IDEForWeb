@@ -1,0 +1,237 @@
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="/assets/css/build/libraries.min.css" />
+    <style>
+        .navbar-primary {
+            background-color: #4D44D0;
+            border: none;
+        }
+        
+        .logging-options li {
+            transition: all 0.3s ease-in;
+        }
+        
+        .logging-options li:hover {
+            background-color: darkorange;
+            transform: scale(0.9, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <% if(!user) {%>
+        <nav class="navbar navbar-primary navbar-inverse" style="border-radius:0px;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/" style="color:white;">Web IDE</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav logging-options">
+                        <li>
+                            <a href="/login" style="color:white;">Log In</a>
+                        </li>
+                        <li>
+                            <a href="/register" style="color:white;">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container-fluid" style="margin-top:-15px;">
+            <div class="row">
+                <div class="col-md-6 well">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="text-center" style="margin:0px;padding:0px;font-family:'Verdana';">Добредојдовте</h4>
+                        </div>
+                        <div class="panel-body">
+                            Ова е апликација која што ви дозволува да уредувате код со
+                            <b> HTML </b>,
+                            <b>JS, </b> и <b> CSS</b> синтакса , така што ви нуди едноставен текст едитор и креирање на front-end проекти.
+                            <hr/>
+                            <label class="alert-info" style="padding:5px;"> Доколку сакате да уредувате потребно е да креирате своја сметка и да се најавите. Креирањето на проект е straight-forward.
+</label>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="text-center" style="margin:0px;padding:0px;font-family:'Verdana';">Малку <i style="color:orange;font-weight:bold;">OffTopic</i> :)</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Бидејќи во проектот беше потребно да се употреби некаков тип на визуелизација и поради недостатокот на идеја кај би можел да го употребам тоа во проект од ваков карактер , одлучив овде на homepage-от да демонстрирам една мала интересна симулација.
+                            </p>
+                            <hr>
+                            <p>
+                                Целта е премногу едноставна , во полето долу внесувате два броја одделени со едно празно место (
+                                <b>броевите ги референцираат блоковите со соодветниот број</b>) и со тоа кажувате кој блок над кој треба да се постави (
+                                <b>Првиот се поставува над вториот</b>) , кликнувате <b>Execute </b> и "Елеваторот" треба сам да се снајде да ги организира.
+                                <input type="text" id="tilesNames" placeholder="which on which" />
+                                <button class="btn btn-primary" id="execute">Execute</button><br/>
+                                <label class="alert-info" style="padding:5px;"> Концептот овде е класичен проблем од Вештачка интелигенција , па користи рекурзивен алгоритам да ja постигне целта.Поради
+комплексноста на рекурзијата по некогаш греши , меѓутоа немам време да го дебагирам тоа сепак ова е само семинарска работа.
+Имплементацијата е направена од мене во чист Javascript со користење на Canvas за цртањето и Promises од ES6 стандардот поради
+асинхрониот динамички редослед на анимациите.<br>
+<span style="color:green;"> Целата логика на симулацијата се наоѓа во public/tiles/tiles.js</span>
+</label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="background-color:white;">
+                    <canvas id="canvas" width="600" height="570"></canvas>
+                </div>
+            </div>
+            <% } %>
+                <% if (user) { %>
+                    <nav class="navbar navbar-primary navbar-inverse" style="border-radius:0px;">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                                <a class="navbar-brand" href="/" style="color:white;">Web IDE</a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="/logout" style="color:white;font-weight:600;"> Log Out </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                    <div class="container-fluid" style="margin-left:10px;">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-md-12  text-center" style="  background: #448FD0;padding-top:5px;">
+                                        <span class="glyphicon glyphicon-user" style="font-size:15em;"></span>
+                                    </div>
+                                    <div class="col-md-12 alert alert-info" style="border-radius:0px; background: #44ACCC;">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <label for="">Username: </label>
+                                                <span><%= user.username %></span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <label for="">Lives in: </label>
+                                                <span><%=user.livesIn%></span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <label for="">Occupation: </label>
+                                                <span><%=user.occupation%></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            Make New Project
+                            </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="/projects" method="post">
+                                                            <div class="form-group">
+                                                                <label for="project_name">Project Name</label>
+                                                                <input type="text" class="form-control" name="projectName" id="project_name" placeholder="Enter the name of the project">
+                                                            </div>
+                                                            <button type="submit" class="btn btn-default">Submit</button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="panel panel-info" style="border-radius:0px;">
+                                    <div class="panel-heading" style="border-radius:0px;">
+                                        <h5 style="margin:0px;">Who am I ?</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <pre style="background-color:#1F1E1E;color:white;font-size:15px;white-space:pre-wrap;word-wrap:break-word;">
+<%=user.aboutMe%>
+    </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="panel panel-info" style="border-radius:0px;">
+                                    <div class="panel-heading" style="border-radius:0px;">
+                                        <h5 style="margin:0px;">My Projects</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <% for(var i=0;i<projects.length;i++) {%>
+                                                <div class="col-md-4">
+                                                    <div class="panel panel-success">
+                                                        <div class="panel-heading">
+                                                            <h5 style="margin:0px;">
+                                                                <a href="#" style="color:black; font-weight:bold;">
+                                                                    <%= projects[i].name %>
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-body text-center">
+                                                                    <span class="glyphicon glyphicon-file" style="font-size:9em;"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-footer text-center">
+                                                            <a href="/edit/<%=projects[i].name%>" class="btn btn-success">
+                                                                <span class="glyphicon glyphicon-edit"></span>
+                                                                <span style="margin-left:10px;">Edit this project</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+
+                    <div class="effects">
+                        <audio src="/sounds/crash.mp3" id="detache"></audio>
+                        <audio src="/sounds/clap.mp3" id="drop"></audio>
+                    </div>
+                    <script src="/assets/js/build/libraries.min.js"></script>
+                    <script src="/assets/js/build/tiles.min.js"></script>
+</body>
+
+</html>
