@@ -140,7 +140,8 @@ function create() {
                 tab.fileNode = ControllerData.nodeToFind;
             }
 
-
+            Repl._open()
+            
         },
         "error": function (err) {
             console.log(err);

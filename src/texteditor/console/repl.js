@@ -16,7 +16,7 @@ var Repl = (function (_console, commands) {
 
     const inputRow = (path) => `
         <div class="console-input-row">
-            <span class="console-path">${path}</span><input type="text" class="console-input">
+            <span class="console-path">${path.split('projects\\').slice(1)}</span><input type="text" class="console-input">
         </div>`
     const outputTemplate = (output, isError = false) => `
         <pre class="console-output ${isError ? 'stdout-error' : ''}">${output}</pre>`
